@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <title>iDEA - Home</title>
+    <meta charset="utf-8" />
+    <meta name="keywords" content="key, words" />
+    <meta name="description" content="description" />   
+
+    <link rel="stylesheet" href="jsHomeResize.css" type="text/css" />
+    <link rel="icon" href="BigIDEALogo.png">
+    
+    
+    <script type="text/javascript">
+        var documentMainPageLoadBool = false;
+        var documentFirstPageLoadBool = false;
+        var documentSecondPageLoadBool = false;
+        var documentThirdPageLoadBool = false;
+        var documentFourthPageLoadBool = false;
+        
+        var documentSubLoadBool = false;
+        
+        window.onload = documentLoad; /*function() {
+            var ideaName = document.getElementById("header1");
+            ideaName.innerHTML = window.innerWidth;
+        } */
+            
+        function documentLoad() {
+            "use strict";
+            
+            var ideaName = document.getElementById("header1");
+            var headerRightHalf = document.getElementsByClassName("headerRightHalf");
+            
+            var IDEAheader = document.getElementById("IDEAheader");
+            var galleryText = document.getElementById("galleryText");
+            var gallery = document.getElementById("gallery");
+            var text = document.getElementById("text");
+            var learnMoreButton = document.getElementById("learnMoreLink");
+            var galleryBreak = document.getElementById("galleryBreak");
+            
+            var whyJoinDiv = document.getElementById("whyJoin");
+            var whyJoinLeftHalf = document.getElementById("whyJoinLeft-half");
+            var whyJoinHeader = document.getElementById("whyJoinHeader");
+            var whyJoinP = document.getElementById("whyJoinP");
+            var whyJoinImg = document.getElementById("whyJoinImg");
+            var whyJoinRightHalf = document.getElementById("whyJoinRight-half");
+            
+            var footer = document.getElementById("footer");
+            var footerh1 = document.getElementById("footerh1");
+            var logos = document.getElementById("logos");
+            var facebookLogo = document.getElementById("facebook");
+            var gmailLogo = document.getElementById("gmail");
+            var footerBar1 = document.getElementById("footerBar1");
+            var footerBar2 = document.getElementById("footerBar2");
+            var footerBar3 = document.getElementById("footerBar3");
+        //    var footerUl = document.getElementById("footerUl");
+            
+            var coursesDiv = document.getElementById("courses");
+            var courseTable = document.getElementById("courseChart");
+            var course1 = document.getElementById("course1");
+            var course2 = document.getElementById("course2");
+            
+            var facebook = document.getElementsByClassName("fb-page");
+            var subscribe = document.getElementById("subscribe");
+            var subscribeLeftHalf = document.getElementById("subscribeLeft-half");
+            var subscribeRightHalf = document.getElementById("subscribeRight-half");
+            
+            var courseMainHeader1 = document.getElementById("courseMainHeader1");
+            var courseMainHeader2 = document.getElementById("courseMainHeader2");
+            
+            if (window.innerWidth >= 1000) {
+                documentFirstPageLoadBool = true;
+                documentSecondPageLoadBool = true;
+                documentThirdPageLoadBool = true;
+                documentFourthPageLoadBool = true;
+                
+                if (documentMainPageLoadBool) {
+                    documentMainPageLoadBool = false;    
+                    location.reload(true);
+                }
+            }
+            
+            else if (window.innerWidth < 1000 && window.innerWidth >= 810) {
+                documentMainPageLoadBool = true;
+                documentSecondPageLoadBool = true;
+                documentThirdPageLoadBool = true;
+                documentFourthPageLoadBool = true;
+                
+                if (documentFirstPageLoadBool) {
+                    documentFirstPageLoadBool = false;
+                    location.reload(true);
+                }
+                
+                ideaName.innerHTML = "IDEA";
+                IDEAheader.style.fontSize = "50px";
+                galleryText.style.fontSize = "18px";
+                //   gmailLogo.style.width = "40%";
+                gmailLogo.style.width = "30px";
+            //    facebookLogo.style.width = "40%";
+                facebookLogo.style.width = "30px";
+                
+            }
+            
+            else if (window.innerWidth < 810 && window.innerWidth >= 515) {
+                documentMainPageLoadBool = true;
+                documentFirstPageLoadBool = true;
+                documentThirdPageLoadBool = true;
+                documentFourthPageLoadBool = true;             
+                
+                if (documentSecondPageLoadBool) {
+                    documentSecondPageLoadBool = false;
+                    location.reload(true);
+                }
+                
+                if (window.innerWidth < 613) {
+                    documentSubLoadBool = true;
+                    courseMainHeader2.innerHTML = "Computer Aided Design";
+                    subscribe.style.maxWidth = "100%";
+                } 
+                
+                if (documentSubLoadBool) {
+                    location.reload(true);
+                }
+                
+                ideaName.innerHTML = "IDEA";
+                IDEAheader.style.fontSize = "45px";
+                galleryText.style.fontSize = "16px";
+                
+                footer.style.width = "100%";
+                footer.paddingTop = "0";
+                footerh1.innerHTML = "Contact Us Below";
+            /*    gmailLogo.style.width = "20%";
+                facebookLogo.style.width = "20%";  */   
+                //   gmailLogo.style.width = "40%";
+                gmailLogo.style.width = "30px";
+            //    facebookLogo.style.width = "40%";
+                facebookLogo.style.width = "30px";
+                
+                var imgTemp = whyJoinImg;
+                 whyJoinImg.parentNode.removeChild(whyJoinImg);
+            }
+            
+            else if (window.innerWidth < 515 && window.innerWidth >= 480) {
+                documentMainPageLoadBool = true;
+                documentFirstPageLoadBool = true;
+                documentSecondPageLoadBool = true;
+                documentFourthPageLoadBool = true;
+
+                if (documentSubLoad) {
+                    location.reload(true);
+                }
+                
+                if (documentThirdPageLoadBool) {
+                    documentThirdPageLoadBool = false;
+                    location.reload(true);
+                }
+                
+            //   gmailLogo.style.width = "40%";
+                gmailLogo.style.width = "30px";
+            //    facebookLogo.style.width = "40%";
+                facebookLogo.style.width = "30px";
+                
+                 ideaName.innerHTML = "IDEA";
+                while (headerRightHalf[0].firstChild) {
+                    headerRightHalf[0].removeChild(headerRightHalf[0].firstChild);
+                }
+                
+                var textTT = document.createElement("textNode");
+                textTT.id = "textNode";
+                textTT.innerHTML = " Menu &#9776;";
+                headerRightHalf[0].appendChild(textTT);
+                textTT.onclick = textClick; 
+                
+                text.style.marginRight = "8px";
+                text.style.marginLeft = "8px";
+                gallery.style.paddingTop = "30px";
+                gallery.style.paddingBottom = "0px";
+                IDEAheader.style.fontSize = "30px";
+                galleryText.style.fontSize = "15px";
+                learnMoreButton.style.fontSize = "12px";
+                
+                var temporaryCourse = course2;
+                temporaryCourse.id="tempCourse";
+                course2.parentNode.removeChild(course2);
+                var br = document.createElement("br");
+                course1.appendChild(br);
+                course1.appendChild(temporaryCourse);
+                
+                footer.style.width = "100%";
+                footer.paddingTop = "0";
+                footerh1.innerHTML = "Contact Us";
+                
+                whyJoinImg.parentNode.removeChild(whyJoinImg);
+                  
+                if (window.innerWidth >= 490 && window.width < 515) {
+                    footerBar1.remove();
+                    footerBar2.remove();
+                    footerBar3.remove();
+                }
+                else {
+                    footerBar1.remove();
+                    footerBar3.remove();
+                }
+                
+                var tempImage = whyJoinImg;
+                whyJoinImg.parentNode.removeChild(whyJoinImg);
+                whyJoinRightHalf.appendChild(tempImage);
+                
+                
+            }
+
+            else {
+                documentMainPageLoadBool = true;
+                documentFirstPageLoadBool = true;
+                documentSecondPageLoadBool = true;
+                documentThirdPageLoadBool = true;
+                
+                if (documentFourthPageLoadBool) {
+                    documentFourthPageLoadBool = false;
+                    location.reload(true);
+                }
+                
+                ideaName.innerHTML = "IDEA";
+                while (headerRightHalf[0].firstChild) {
+                    headerRightHalf[0].removeChild(headerRightHalf[0].firstChild);
+                }
+                
+                var textTT = document.createElement("textNode");
+                textTT.id = "textNode";
+                textTT.innerHTML = " Menu &#9776;";
+                headerRightHalf[0].appendChild(textTT);
+                textTT.onclick = textClick; 
+                
+                text.style.marginRight = "8px";
+                text.style.marginLeft = "8px";
+                gallery.style.paddingTop = "30px";
+                gallery.style.paddingBottom = "0px";
+                IDEAheader.style.fontSize = "40px";
+                galleryText.style.fontSize = "14px";
+                learnMoreButton.style.fontSize = "12px";
+                
+                var temporaryCourse = course2;
+                temporaryCourse.id="tempCourse";
+                course2.parentNode.removeChild(course2);
+                var br = document.createElement("br");
+                course1.appendChild(br);
+                course1.appendChild(temporaryCourse);
+                
+                footer.style.width = "100%";
+                footer.paddingTop = "0";
+                footerh1.innerHTML = "Contact Us";
+             //   gmailLogo.style.width = "40%";
+                gmailLogo.style.width = "30px";
+            //    facebookLogo.style.width = "40%";
+                facebookLogo.style.width = "30px";
+                  
+                footerBar1.remove();
+                footerBar2.remove();
+                footerBar3.remove();
+                
+                tempImage = whyJoinImg;
+                whyJoinImg.parentNode.removeChild(whyJoinImg);
+                whyJoinRightHalf.appendChild(tempImage);
+            } 
+        }
+        
+    function textClick() {
+        var navigationDropDown = document.getElementById("navigationDropDown");
+        if (condition == false) {
+            navigationDropDown.style.display = "block";
+            condition = true;
+        }
+        else {
+            navigationDropDown.style.display = "none";
+            condition = false;
+        }
+    }
+        
+        var condition = false;
+        
+    function dropdownClick2() {
+        document.getElementById("mainDropdown2").classList.toggle("show");
+        }
+        window.onclick = function(event) {
+        if (!event.target.matches('.dropdownButton2')) {
+            var dropdownContent2 = document.getElementsByClassName("dropdown-content2");
+            for (var i = 0; i < dropdownContent2.length; i++) {
+                var dropdownOpen2= dropdownContent2[i];
+                if (dropdownOpen2.classList.contains('show')) {
+                    dropdownOpen2.classList.remove('show');
+                }
+            }
+        }
+    }
+    
+    window.addEventListener('resize', documentLoad, false); 
+    </script>
+    
+</head>
+    
+<body id="body">
+    <div id="navigation">
+        <div id="left-half">
+            <h1 id="header1">Innovative Development By Entrepreneurs Association</h1>
+        </div>
+        <div id="right-half" class="headerRightHalf">
+            <span id="mainLinks">
+            <a href="jsHomeResize.html">Home</a>
+            <a href="modernClasses.html">Classes</a>
+            <a href="modernPhotos.html">Photos</a>
+            <a href="modernContactUs.html">Contact</a>
+            </span>
+            <div class="dropdown">
+                <a onclick="dropdownClick()" class="dropdownButton">About Us</a>
+                <div id="mainDropdown" class="dropdown-content">
+                    <a href="modernWhoWeAre.html">Who We Are</a>
+                    <a href="modernTeam.html">The Team</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="navigationDropDown">
+        <div id="right-half">
+            <span id="mainLinks2">
+            <a href="jsHomeResize.html">Home</a>
+            <a href="modernClasses.html">Classes</a>
+            <a href="modernPhotos.html">Photos</a>
+            <a href="modernContactUs.html">Contact</a>
+            </span>
+            <div class="dropdown2">
+                <a onclick="dropdownClick2()" class="dropdownButton2">About Us</a>
+                <div id="mainDropdown2" class="dropdown-content2">
+                    <a href="modernWhoWeAre.html">Who We Are</a>
+                    <a href="modernTeam.html">The Team</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+    function dropdownClick() {
+        document.getElementById("mainDropdown").classList.toggle("show");
+    }
+    window.onclick = function(event) {
+        if (!event.target.matches('.dropdownButton')) {
+            var dropdownContent = document.getElementsByClassName("dropdown-content");
+            for (var i = 0; i < dropdownContent.length; i++) {
+                var dropdownOpen = dropdownContent[i];
+                if (dropdownOpen.classList.contains('show')) {
+                    dropdownOpen.classList.remove('show');
+                }
+            }
+        }
+    }
+    function dropdownClick2() {
+        document.getElementById("mainDropdown2").classList.toggle("show");
+    }
+    window.onclick = function(event2) {
+        if (!event2.target.matches('.dropdownButton2')) {       
+            var dropdownsContent2 = document.getElementsByClassName("dropdown-content2");
+            for (var i = 0; i < dropdownsContent2.length; i++) {
+                var dropdownOpen2 = dropdownsContent2[i];
+                if (dropdownOpen2.classList.contains('show')) {
+                    dropdownOpen2.classList.remove('show');
+                }
+            }
+        }
+    }
+    </script>
+         
+   <div id="gallery">
+        <div id="text">
+            <center><h1 id="IDEAheader">iDEA</h1></center>
+            <p id="galleryText">We believe that you have business potential. Our mission is to help you learn the basic fundamental skills of entrepreneurship and business. We are a registered non-profit founded in June 2016.</p>
+            <br id="galleryBreak">
+           <!-- <button>--><a href="modernWhoWeAre.html" id="learnMoreLink">LEARN MORE</a><!--</button>-->
+            <br id="galleryBreak">
+            <br id="galleryBreak">
+        </div>
+        <br id="galleryBreak">
+        <br id="galleryBreak">
+    </div>
+    
+    <br>
+    <br>
+    
+    <!-- <hr> -->
+    
+    <br>
+    <br>
+    
+    <div id="WhyJoin">
+        <div id="whyJoinLeft-half">
+            <h2 id="whyJoinHeader">Fostering Entrepreneurship Education In The Community</h2>
+            <p id="whyJoinP">
+We believe that you have the power to change the world. Within a few hours, learn how to innovate, and turn your dreams into reality. Given a few weeks, you will be able to learn the core fundamentals of entrepreneurship and business. You will be able to properly conduct market research, build a business plan, file a patent, and market your invention. Our mission is to prove that you have the ability to make the difference in this world with your unique and diverse mind set. We arrange workshops in local libraries to teach children and teens of all ages. This program is taught by high school students who have experience in the business field, whether it is starting a company, or being able to interact or work with one. 
+            </p>
+            <p style="text-align:left;"><b>-Aneesh Goel, Founder and CEO</b></p>
+            <br>
+        </div>
+        
+        <div id="whyJoinRight-half">
+            <img id="whyJoinImg" src="InnovativeImage.jpg" />
+        </div>
+    </div>
+    
+   <!-- <hr> -->
+    
+    <div id="startChapter">
+        <h2>Start an IDEA chapter</h2>
+        <p>Are you a passionate high school in the Bay Area who believes that you can impact the community? Do you want to start an IDEA chapter in your local community? Contact us though our website and we will send you the information package on how you can start our chapters.</p>
+    <!--    <br> -->
+    </div>
+    
+    <!-- <hr> -->
+    <br>
+    <br>
+    
+    <div id="courses">
+        
+        <script type="text/javascript">
+            function entrepreneurshipCourse() {
+                window.location.href = "modernClasses.html";
+           //     window.scrollTo(123, 500);
+            }
+            
+            function cadCourse() {
+                window.location.href = "modernClasses.html";
+           //     window.location.scrollTo(0,500);
+            }
+        </script>
+        
+        
+        <table id="courseChart" align="center";>
+            <tr>
+                <td id="course1">
+                    <center>
+                        <h1 id="courseMainHeader1">Entrepreneurship</h1>
+                        <img src="Entrepreneurship.png">
+                        <p>Want to learn how to start you own company? Do you want to write a business plan and get feedback from professionals? Join the entrepreneurship program for this and much more! </p>
+                        <a onclick="entrepreneurshipCourse()">Learn More</a>
+                    </center>
+                </td>
+                <td id="course2">
+                    <center>
+                        <h1 id = "courseMainHeader2">Computer Aided Design (CAD)</h1>
+                        <img src="CADProgram.png">
+                        <p>Do you want to learn to design cool products? Do you want to learn about product development and the product engineering aspect of business? Be sure to join the CAD program!</p>
+                        <a onclick="cadCourse()">Learn More</a>
+                    </center>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <br>
+        <br>
+    </div>
+    
+    
+    <!-- <hr> -->
+    <br>
+    <br> 
+    
+    
+    
+    <div id="subscribe">
+        <div id="subscribeLeft-half">
+            <center>
+            <div class="fb-page" data-href="https://www.facebook.com/Innovative-Development-by-Entrepreneurs-Association-130067194063527/" data-tabs="timeline" data-width="400" data-height="400" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false">
+                <blockquote cite="https://www.facebook.com/Innovative-Development-by-Entrepreneurs-Association-130067194063527/" class="fb-xfbml-parse-ignore">
+                    <a href="https://www.facebook.com/Innovative-Development-by-Entrepreneurs-Association-130067194063527/">Innovative Development by Entrepreneurs Association</a>
+                </blockquote>
+                </div> 
+            </center>
+    
+            <div id="fb-root"></div>
+                <script>
+                      (function(d, s, id) {
+                      var js, fjs = d.getElementsByTagName(s)[0];
+                      if (d.getElementById(id)) {
+                          return;
+                      }
+                      js = d.createElement(s); js.id = id;
+                      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7";
+                      fjs.parentNode.insertBefore(js, fjs);
+                    }(document, 'script', 'facebook-jssdk'));
+                </script>
+        </div>
+        
+        <div id="subscribeRight-half">
+             <h1>Contact Us:</h1>
+                <p><b>Email:</b> <a href="mailto:thinkbeyondidea@gmail.com">thinkbeyondidea@gmail.com</a></p>
+                <p><b>Facebook:</b> <a href="https://www.facebook.com/Innovative-Development-by-Entrepreneurs-Association-130067194063527/">https://www.facebook.com/Innovative-Development-by-Entrepreneurs-Association-130067194063527/</a></p>
+                <p><b>Twitter:</b> <a href="https://twitter.com/ideassociation1">https://twitter.com/ideassociation1</a></p>
+        </div>
+    </div>
+    
+    <div id="footer">
+        <div class="left-half">
+        <h10>© 2016-2017 IDEA, All Rights Reserved</h10>
+        </div>
+        <div class="center">
+            <h11 id="footerh1">Contact us through our social media below if you have any questions or concerns</h11>
+            <br>
+            <div id="logos">
+                <a id="footerA" href="https://www.facebook.com/Innovative-Development-by-Entrepreneurs-Association-130067194063527/"><img id="facebook" src="FacebookLogo.jpg" onmouseover="this.src='FacebookLogo-Hover.jpg';" onmouseout="this.src='FacebookLogo.jpg';"></a>
+                <a id="footerA" href="mailto:thinkbeyondidea@gmail.com"><img id="gmail" src="MailLogo.jpg" onmouseover="this.src='MailLogo-Hover.jpg';" onmouseout="this.src='MailLogo.jpg';">
+                </a>
+            </div>
+        </div>
+        <div class="right-half">
+            <ul id="footerUl">
+                <a href="modernContactUs.html">Feedback</a> <span id="footerBar1">|</span>
+                <a href="modernTeam.html">Team</a> <span id="footerBar2">|</span>
+                <a href="modernClasses.html">Classes</a> <span id="footerBar3">|</span>
+                <a href="modernPhotos.html">Photos</a>
+            </ul>
+        </div>
+    </div>
+    
+    
+    
+   <!-- <script>     
+        var slideIndex = 1;
+        window.onload = function() {
+            var x = document.getElementsByClassName("mySlidesCalabazas");
+            while (window.onload) {
+            var slideshow = document.getElementById("slideshow");
+            setInterval(slideshowFnt(), 5);
+            }
+            
+        }
+        
+        function slideshowFnct() {
+            var x = document.getElementsByClassName("mySlidesCalabazas");
+            for (i = 0; i < x.length; i++) {
+                 x[i].style.display = "none";  
+              }
+              x[slideIndex-1].style.display = "block";
+        }     
+        </script> -->
+    
+</body>      
+        
+</html>

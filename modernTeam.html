@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <title>IDEA - Team</title>
+    <meta charset="utf-8" />
+    <meta name="keywords" content="key, words" />
+    <meta name="description" content="description" />   
+
+    <link rel="stylesheet" href="modernTeam.css" type="text/css" />
+    <link rel="icon" href="BigIDEALogo.png">
+    
+    
+    <script type="text/javascript">
+        var documentMainPageLoadBool = false;
+        var documentFirstPageLoadBool = false;
+        var documentSecondPageLoadBool = false;
+        var documentThirdPageLoadBool = false;
+        var documentFourthPageLoadBool = false;
+        window.onload = documentLoad; /*function() {
+            var ideaName = document.getElementById("header1");
+            ideaName.innerHTML = window.innerWidth;
+        }*/
+            
+        function documentLoad() {
+            "use strict";
+            
+            var ideaName = document.getElementById("header1");
+            var headerRightHalf = document.getElementsByClassName("headerRightHalf");
+            
+            var footer = document.getElementById("footer");
+            var footerh1 = document.getElementById("footerh1");
+            var logos = document.getElementById("logos");
+            var facebookLogo = document.getElementById("facebook");
+            var gmailLogo = document.getElementById("gmail");
+            var footerBar1 = document.getElementById("footerBar1");
+            var footerBar2 = document.getElementById("footerBar2");
+            var footerBar3 = document.getElementById("footerBar3");
+            
+            var table = document.getElementById("table");
+            var tr1 = document.getElementById("tr1");
+            
+            if (window.innerWidth >= 1000) {
+                documentFirstPageLoadBool = true;
+                documentSecondPageLoadBool = true;
+                documentThirdPageLoadBool = true;
+                documentFourthPageLoadBool = true;
+                
+                if (documentMainPageLoadBool) {
+                    documentMainPageLoadBool = false;    
+                    location.reload(true);
+                }
+            }
+            
+            else if (window.innerWidth < 1000 && window.innerWidth >= 810) {
+                documentMainPageLoadBool = true;
+                documentSecondPageLoadBool = true;
+                documentThirdPageLoadBool = true;
+                documentFourthPageLoadBool = true;
+                
+                if (documentFirstPageLoadBool) {
+                    documentFirstPageLoadBool = false;
+                    location.reload(true);
+                }
+                
+                ideaName.innerHTML = "IDEA";
+                //   gmailLogo.style.width = "40%";
+                gmailLogo.style.width = "30px";
+            //    facebookLogo.style.width = "40%";
+                facebookLogo.style.width = "30px";
+                
+            }
+            
+            else if (window.innerWidth < 810 && window.innerWidth >= 515) {
+                documentMainPageLoadBool = true;
+                documentFirstPageLoadBool = true;
+                documentThirdPageLoadBool = true;
+                documentFourthPageLoadBool = true;
+                
+                if (documentSecondPageLoadBool) {
+                    documentSecondPageLoadBool = false;
+                    location.reload(true);
+                }
+                
+                ideaName.innerHTML = "IDEA";
+                
+                for (var i = 1; i <= 12/*Number of tr rows*/; i++) {
+                    var tableh = document.getElementById("tableh".concat(i));
+                    tableh.style.textAlign = "center";
+                    document.getElementById("tr".concat(i).concat("td1")).appendChild(tableh);
+                    var tablep1 = document.getElementById("tablep".concat(i));
+                    tablep1.style.textAlign = "justify";
+                    document.getElementById("tr".concat(i).concat("td1")).appendChild(tablep1);
+                }
+                
+                footer.style.width = "100%";
+                footer.paddingTop = "0";
+                footerh1.innerHTML = "Contact Us Below";
+            /*    gmailLogo.style.width = "20%";
+                facebookLogo.style.width = "20%";  */   
+                //   gmailLogo.style.width = "40%";
+                gmailLogo.style.width = "30px";
+            //    facebookLogo.style.width = "40%";
+                facebookLogo.style.width = "30px";
+                
+            }
+            
+            else if (window.innerWidth < 515 && window.innerWidth >= 480) {
+                documentMainPageLoadBool = true;
+                documentFirstPageLoadBool = true;
+                documentSecondPageLoadBool = true;
+                documentFourthPageLoadBool = true;
+                
+                if (documentThirdPageLoadBool) {
+                    documentThirdPageLoadBool = false;
+                    location.reload(true);
+                }
+                
+            //   gmailLogo.style.width = "40%";
+                gmailLogo.style.width = "30px";
+            //    facebookLogo.style.width = "40%";
+                facebookLogo.style.width = "30px";
+                
+                 ideaName.innerHTML = "IDEA";
+                while (headerRightHalf[0].firstChild) {
+                    headerRightHalf[0].removeChild(headerRightHalf[0].firstChild);
+                }
+                
+                for (var i = 1; i <= 12/*Number of tr rows*/; i++) {
+                    var tableh = document.getElementById("tableh".concat(i));
+                    tableh.style.textAlign = "center";
+                    document.getElementById("tr".concat(i).concat("td1")).appendChild(tableh);
+                    var tablep1 = document.getElementById("tablep".concat(i));
+                    tablep1.style.textAlign = "justify";
+                    document.getElementById("tr".concat(i).concat("td1")).appendChild(tablep1);
+                }
+                
+                var textTT = document.createElement("textNode");
+                textTT.id = "textNode";
+                textTT.innerHTML = " Menu &#9776;";
+                headerRightHalf[0].appendChild(textTT);
+                textTT.onclick = textClick; 
+                
+                footer.style.width = "100%";
+                footer.paddingTop = "0";
+                footerh1.innerHTML = "Contact Us";
+                  
+                if (window.innerWidth >= 490 && window.width < 515) {
+                    footerBar1.remove();
+                    footerBar2.remove();
+                    footerBar3.remove();
+                }
+                else {
+                    footerBar1.remove();
+                    footerBar3.remove();
+                }
+     
+            }
+
+            else {
+                documentMainPageLoadBool = true;
+                documentFirstPageLoadBool = true;
+                documentSecondPageLoadBool = true;
+                documentThirdPageLoadBool = true;
+                
+                if (documentFourthPageLoadBool) {
+                    documentFourthPageLoadBool = false;
+                    location.reload(true);
+                }
+                
+                ideaName.innerHTML = "IDEA";
+                while (headerRightHalf[0].firstChild) {
+                    headerRightHalf[0].removeChild(headerRightHalf[0].firstChild);
+                }
+                
+                for (var i = 1; i <= 12/*Number of tr rows*/; i++) {
+                    var tableh = document.getElementById("tableh".concat(i));
+                    tableh.style.textAlign = "center";
+                    document.getElementById("tr".concat(i).concat("td1")).appendChild(tableh);
+                    var tablep1 = document.getElementById("tablep".concat(i));
+                    tablep1.style.textAlign = "justify";
+                    document.getElementById("tr".concat(i).concat("td1")).appendChild(tablep1);
+                }
+                
+                var textTT = document.createElement("textNode");
+                textTT.id = "textNode";
+                textTT.innerHTML = " Menu &#9776;";
+                headerRightHalf[0].appendChild(textTT);
+                textTT.onclick = textClick; 
+                
+                footer.style.width = "100%";
+                footer.paddingTop = "0";
+                footerh1.innerHTML = "Contact Us";
+             //   gmailLogo.style.width = "40%";
+                gmailLogo.style.width = "30px";
+            //    facebookLogo.style.width = "40%";
+                facebookLogo.style.width = "30px";
+                  
+                footerBar1.remove();
+                footerBar2.remove();
+                footerBar3.remove();
+                
+                for (var i = 1; i <= 12; i++) {
+                    var tempTr = document.getElementById("tr".concat(i));
+                    var tempTd = tempTr.lastChild;
+                 /*   var tTempTd = tempTd;
+                    TempTd.parentNode.removeChild(tempTd);
+                    TempTr.appendChild(tTempTd); */
+                    tempTd.style.display = "none";
+                }
+            } 
+        }
+        
+    function textClick() {
+        var navigationDropDown = document.getElementById("navigationDropDown");
+        if (condition == false) {
+            navigationDropDown.style.display = "block";
+            condition = true;
+        }
+        else {
+            navigationDropDown.style.display = "none";
+            condition = false;
+        }
+    }
+        
+        var condition = false;
+        
+    function myFunction2() {
+        document.getElementById("myDropdown2").classList.toggle("show");
+        }
+        
+        window.onclick = function(event) {
+        if (!event.target.matches('.dropdownButton2')) {
+            var dropdowns2 = document.getElementsByClassName("dropdown-content2");
+            for (var i = 0; i < dropdowns.length; i++) {
+                var openDropdown2= dropdowns2[i];
+                if (openDropdown2.classList.contains('show')) {
+                    openDropdown2.classList.remove('show');
+                }
+            }
+        }
+    }
+    
+    window.addEventListener('resize', documentLoad, false); 
+    </script>
+    
+</head>
+    
+<body id="body">
+    <div id="navigation">
+        <div id="left-half">
+            <h1 id="header1">Innovative Development By Entrepreneurs Association</h1>
+        </div>
+        <div id="right-half" class="headerRightHalf">
+            <span id="mainLinks">
+            <a href="jsHomeResize.html">Home</a>
+            <a href="modernClasses.html">Classes</a>
+            <a href="modernPhotos.html">Photos</a>
+            <a href="modernContactUs.html">Contact</a>
+            </span>
+            <div class="dropdown">
+                <a onclick="myFunction()" class="dropdownButton">About Us</a>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="modernWhoWeAre.html">Who We Are</a>
+                    <a href="modernTeam.html">The Team</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="navigationDropDown">
+        <div id="right-half">
+            <span id="mainLinks2">
+            <a href="jsHomeResize.html">Home</a>
+            <a href="modernClasses.html">Classes</a>
+            <a href="modernPhotos.html">Photos</a>
+            <a href="modernContactUs.html">Contact</a>
+            </span>
+            <div class="dropdown2">
+                <a onclick="myFunction2()" class="dropdownButton2">About Us</a>
+                <div id="myDropdown2" class="dropdown-content2">
+                    <a href="modernWhoWeAre.html">Who We Are</a>
+                    <a href="modernTeam.html">The Team</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+    window.onclick = function(event) {
+        if (!event.target.matches('.dropdownButton')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            for (var i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+    function myFunction2() {
+        document.getElementById("myDropdown2").classList.toggle("show");
+    }
+    window.onclick = function(event2) {
+        if (!event2.target.matches('.dropdownButton2')) {       
+            var dropdowns2 = document.getElementsByClassName("dropdown-content2");
+            for (var i = 0; i < dropdowns2.length; i++) {
+                var openDropdown2 = dropdowns2[i];
+                if (openDropdown2.classList.contains('show')) {
+                    openDropdown2.classList.remove('show');
+                }
+            }
+        }
+    }
+    </script>
+         
+   <div id="section">
+        <div id="text">
+        <center><h1>Our Leadership Team</h1></center>       
+          
+            <table id="table" cellspacing="20px">
+                <tr id="tr1">
+                    <td id="tr1td1">
+                        <center><h2>Chief Executive Officer (CEO)</h2></center>
+                        <center><img id="leadership" src="AneeshPhoto.jpg"/> </center> 
+                    </td>
+                    <td id="tr1td2">
+                        <h2 id="tableh1">Aneesh Goel</h2>
+                        <p id="tablep1">Hi! I am Aneesh Goel, the CEO, and founder of IDEA. I am a sophomore in Fremont High School. I first fell in love with business and entrepreneurship when I learned about it in 7th grade.  I am involved in my school's DECA chapter as well as the debate team. In the business industry, I have done market research for companies, as well as marketing. I spend most of my free time coaching students in the business industry. I am determined to create an innovative youth community and spread the passion of entrepreneurship.</p>
+                    </td>
+                </tr>
+                <tr id="tr2">
+                    <td id="tr2td1">
+                        <center><h2>Chief Operating Officer (COO)</h2></center>
+                       <center> <img id="leadership" src="ShreyaPhoto.jpg"/> </center>
+                    </td>
+                    <td id="tr2td2">
+                        <h2 id="tableh2">Shreya Kasetty</h2>
+                        <p id="tablep2">I’m Shreya Kasetty and I am a sophomore at Fremont High School! I’ve been part of a couple business clubs/programs for years now, and I’ve enjoyed learning so many new things and being able to teach them to others. One thing I love about business, is that it’s such a wide field with so much to do, giving you plenty of options. My hobbies include reading, listening to music, practicing martial arts, and traveling! I also just love to spend quality time with my family and friends.</p>
+                    </td>
+                </tr>
+                <tr id="tr3">
+                    <td id="tr3td1">
+                        <center><h2>Chief Marketing Officer (CMO)</h2></center>
+                        <center><img id="leadership" src="VrushaliPhoto.jpg" /> </center>
+                    </td>
+                    <td id="tr3td2">      
+                        <h2 id="tableh3">Vrushali Tarte</h2>
+                        <p id="tablep3">1. Fremont, 10, 15 - 2. fbla, deca, i love how you can use business to take an idea u feel will help the people around you and bring it to life - 3. i joined idea to spread the knowledge of business so creative minds of all ages can bring their ideas to life and to give exposure of the business world to younger kids because it's never too early to start</p>
+                    </td>
+                </tr>
+                <tr id="tr4">
+                    <td id="tr4td1">
+                        <center><h2>Teacher</h2></center>
+                        <center><img id="leadership" src="RishaanPhoto.jpg" /></center>
+                    </td>
+                    <td id="tr4td2">      
+                        <h2 id="tableh4">Rishaan Kenkre</h2>
+                        <p id="tablep4">I am in 10th grade, and I go to Evergreen Valley High School. Throughout my high school career, I have gained a lot of business experience: I went to two DECA competitions so far, and I have learned about a lot of business concepts. My hobbies include basketball and soccer. I love that business involves meeting new people and working with them to gain new perspectives in the business world.</p>
+                    </td>
+                </tr>
+                <tr id="tr5">
+                    <td id="tr5td1">
+                        <center><h2>Teacher</h2></center>
+                        <center><img id="leadership" src="ShubhankarPhoto.jpg" /></center>
+                    </td>
+                    <td>      
+                        <h2 id="tableh5">Shubhankar Gaur</h2>
+                        <p id="tablep5"> Hi! My name is Shubhankar Gaur (yes, I know, that's a mouthful), and I am an incoming sophomore who currently attends Bellarmine College Preparatory School in San Jose. I have dabbled in investing, whether it be in virtual currency or stocks, and also am interested in physical property investment. I particularly enjoy debate, as well as volleyball. Business attracts me because of the potential it has, from changing the perceptions of society to influencing the trends of marketing. I particularly enjoy speaking, and business has many opportunities just waiting out there for anyone willing to present to an audience, or even change a single person's mind. The effect that business has on our everyday lives is usually overlooked, but once uncovered, is extremely fascinating.</p>
+                    </td>
+                </tr>
+                <tr id="tr6">
+                    <td id="tr6td1">
+                        <center><h2>Teacher</h2></center>
+                        <center><img id="leadership" src="RithvickPhoto.jpg" /></center>
+                    </td>
+                    <td>      
+                        <h2 id="tableh6">Rithvick Agasty</h2>
+                        <p id="tablep6">Hi! I am a tenth grader at Basis Independent Silicon Valley. I was introduced to business at an early age and continued my passion in entrepreneurship through my high school's DECA chapter. I am an active actor, writer, and debater as well, and I love marketing a lot. I joined the IDEA team because I wanted to make sure that others are introduced to business at an early age and are taught and cared for well enough for them to prosper and thrive in the business world when they grow up.</p>
+                    </td>
+                </tr>
+                <tr id="tr7">
+                    <td id="tr7td1">
+                        <center><h2>Teacher</h2></center>
+                        <center><img id="leadership" src="AayushPhoto.jpg"/></center>
+                    </td>
+                    <td>      
+                        <h2 id="tableh7">Aayush Patkar</h2>
+                        <p id="tablep7">Grade: 10th - School: Fremont High School - Experience With Product Development: In 9th grade, I took an Introduction to Engineering Design course, in which I learned the design process, professional communication and collaboration methods, design ethics, and technical documentation. With this extensive knowledge that I now possess of Autodesk Inventor, I hope to pass on what I know to the students of our Introduction to Product Development class. Why Business?: Since taking Intro to Engineering Design and learning Autodesk Inventor, I have developed a love for design. This is what has led me to decide that I want to pursue a career in product design.</p>
+                    </td>
+                </tr>
+                <tr id="tr8">
+                    <td id="tr8td1">
+                        <center><h2>Teacher</h2></center>
+                        <center><img id="leadership" src="IshaPhoto.jpg" /></center>
+                    </td>
+                    <td>      
+                        <h2 id="tableh8">Isha Goel</h2>
+                        <p id="tablep8">I am Isha Goel, a 10th grader at Fremont High School. I developed my love for the different aspects of business when I joined the DECA club at my school and it prompted my learning to a whole new level. I have also had an interest in design so I have chosen to combine my passion for the two and teach computer-aided design (CAD). I joined IDEA to be able to give back to the community and spread my knowledge to the young generation whom I hope to see do great things. In my other time, I enjoy playing my clarinet and also dancing around to music for fun.</p>
+                    </td>
+                </tr>
+                <tr id="tr9">
+                    <td id="tr9td1">
+                        <center><h2>Teacher</h2></center>
+                        <center><img id="leadership" src="RohanPhoto.jpg"/></center>
+                    </td>
+                    <td>      
+                        <h2 id="tableh9">Rohan Rodrigues</h2>
+                        <p id="tablep9">Hi, I am a 10th grader at Fremont High School. My main hobbies are playing soccer and coding, and I tutor math to middle school students as well. I created the IDEA website and manage the web development of the IDEA organization. I believe that being equally successful at business and coding opens up new opportunities for those who are eager to start a company or get involved in one.</p>
+                    </td>
+                </tr>
+                <tr id="tr10">
+                    <td id="tr10td1">
+                        <center><h2>Teacher</h2></center>
+                        <center><img id="leadership" src="EmmanuelPhoto.jpg"/></center>
+                    </td>
+                    <td>      
+                        <h2 id="tableh10">Emmanuel Ramirez</h2>
+                        <p id="tablep10">Hi, I'm a Fremont sophomore. I have experience with CAD (I dont know if you want to use autodesk) fundamentals and I love seeing my inventions come to life virtually. I'm a fun person who enjoys running and playing guitar in his free time. Having the opportunity to join IDEA, I took it knowing I would be able to spread knowledge and teach CAD skills.</p>
+                    </td>
+                </tr>
+                <tr id="tr11">
+                    <td id="tr11td1">
+                        <center><h2>Teacher</h2></center>
+                        <center><img id="leadership" src="MinaPhoto.jpg"/></center>
+                    </td>
+                    <td>      
+                        <h2 id="tableh11">Mina Miraftab</h2>
+                        <p id="tablep11">Hello everyone! My name is Mina and I’m currently attending Fremont High School as a sophomore. I am so honored be part of such an amazing organization that works to equip others with the tools to make a difference. I’ve been given so much by the people I’ve met along the way, and this is my chance to share the love and give back.
+
+IDEA is a family. Really. The moment you join IDEA, you don’t just join some non-profit. You join a family who’s there to support you every step of the way. I’m speaking to you right now as not just a board member, but as your prospective big sister. From, creating this phenomenal program to promoting it. The experiences and people that I’ve had the opportunity to reach out to, has definitely changed my life for the better, and I hope they will do the same for you, too. I can easily say that IDEA is the most immersive, educational and fun organization that you could join. IDEA will offer you a plethora of different opportunities to grow: it will equip you with skills necessary to succeed regardless of what path you chose to follow. The memories, guidance, and second family that you gain are truly incomparable, so I encourage you to join us. I promise you won’t regret it.
+
+Outside of IDEA, I am a service-oriented individual, creator of things, dreamer, do-er, coffee lover, brunch enthusiast and hopelessly obsessed with tv shows. Service is something that really embodies who I am as a person. I live and breathe by the mantra: service above self. I’m super involved in school, it’s my favorite thing ever. I’m so passionate about everything I do. I’d love to talk about what I’m currently working on with you! Anyways, please feel free to approach me whenever you need anything! I look forward to a fantastic year as your number one fan, friend, and fellow IDEA family member. I look forward to meeting each and everyone of you. Together, we can accomplish great things.</p>
+                    </td>
+                </tr>
+                <tr id="tr12">
+                    <td id="tr12td1">
+                        <center><h2>Teacher</h2></center>
+                        <center><img id="leadership" src="AmitPhoto.jpg"/></center>
+                    </td>
+                    <td>      
+                        <h2 id="tableh12">Amit Chigurupati</h2>
+                        <p id="tablep12">My name is Amit Chigurupati and i am a sophomore at Mission San Jose High School in Fremont. I am currently 15 years old. My business experience comes from personally having my own startup. In addition i have also taken a startup boot camp course run by an organization called TiE(The Indus Entrepreneurs) and gained a lot of valuable knowledge from highly successful individuals. Ive also presented at a conference run by TiE through a branch of their program called TYE(TiE young entrepreneurs) and placed second. Hobbies i like to do in my spare time are playing basketball, watching basketball, reading, and watching the show “Shark Tank”. I personally joined iDEA because business is something that interests me a lot and i would love to spread my knowledge and interest to other people and influence them to becoming successful and hard working people.</p>
+                    </td>
+                </tr>
+           <!--     <tr>
+                    <td>
+                        <center><h2>Teacher</h2></center>
+                        <center><img id="leadership" src=""/></center>
+                    </td>
+                    <td>      
+                        <h2>Nihkil Mekkat</h2>
+                        <p>Lorem ipsum dolor sit amet, pede venenatis in in pharetra curabitur, in luctus wisi tortor, praesent maxime est sapien cum, nulla lectus libero hymenaeos, risus quam consequat. Pellentesque condimentum hac. Mattis sed elit, id risus donec metus nec, congue nascetur rutrum, mollis aliquam. </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <center><h2>Teacher</h2></center>
+                        <center><img id="leadership" src=""/></center>
+                    </td>
+                    <td>      
+                        <h2>Vishaal ___</h2>
+                        <p>Lorem ipsum dolor sit amet, pede venenatis in in pharetra curabitur, in luctus wisi tortor, praesent maxime est sapien cum, nulla lectus libero hymenaeos, risus quam consequat. Pellentesque condimentum hac. Mattis sed elit, id risus donec metus nec, congue nascetur rutrum, mollis aliquam. </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <center><h2>Teacher</h2></center>
+                        <center><img id="leadership" src=""/></center>
+                    </td>
+                    <td>      
+                        <h2>Atharva ___</h2>
+                        <p>Lorem ipsum dolor sit amet, pede venenatis in in pharetra curabitur, in luctus wisi tortor, praesent maxime est sapien cum, nulla lectus libero hymenaeos, risus quam consequat. Pellentesque condimentum hac. Mattis sed elit, id risus donec metus nec, congue nascetur rutrum, mollis aliquam. </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <center><h2>Teacher</h2></center>
+                        <center><img id="leadership" src=""/></center>
+                    </td>
+                    <td>      
+                        <h2>Joshua Yu</h2>
+                        <p>Lorem ipsum dolor sit amet, pede venenatis in in pharetra curabitur, in luctus wisi tortor, praesent maxime est sapien cum, nulla lectus libero hymenaeos, risus quam consequat. Pellentesque condimentum hac. Mattis sed elit, id risus donec metus nec, congue nascetur rutrum, mollis aliquam. </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <center><h2>Teacher</h2></center>
+                        <center><img id="leadership" src=""/></center>
+                    </td>
+                    <td>      
+                        <h2>Jeevan ___</h2>
+                        <p>Lorem ipsum dolor sit amet, pede venenatis in in pharetra curabitur, in luctus wisi tortor, praesent maxime est sapien cum, nulla lectus libero hymenaeos, risus quam consequat. Pellentesque condimentum hac. Mattis sed elit, id risus donec metus nec, congue nascetur rutrum, mollis aliquam. </p>
+                    </td>
+                </tr> -->
+            </table>
+        </div>
+        <br>
+    </div>
+    
+    <div id="footer">
+        <div class="left-half">
+        <h10>© 2016-2017 IDEA, All Rights Reserved</h10>
+        </div>
+        <div class="center">
+            <h11 id="footerh1">Contact us through our social media below if you have any questions or concerns</h11>
+            <br>
+            <div id="logos">
+                <a id="footerA" href="https://www.facebook.com/Innovative-Development-by-Entrepreneurs-Association-130067194063527/"><img id="facebook" src="FacebookLogo.jpg" onmouseover="this.src='FacebookLogo-Hover.jpg';" onmouseout="this.src='FacebookLogo.jpg';"></a>
+                <a id="footerA" href="mailto:thinkbeyondidea@gmail.com"><img id="gmail" src="MailLogo.jpg" onmouseover="this.src='MailLogo-Hover.jpg';" onmouseout="this.src='MailLogo.jpg';">
+                </a>
+            </div>
+        </div>
+        <div class="right-half">
+            <ul id="footerUl">
+                <a href="modernContactUs.html">Feedback</a> <span id="footerBar1">|</span>
+                <a href="modernTeam.html">Team</a> <span id="footerBar2">|</span>
+                <a href="modernClasses.html">Classes</a> <span id="footerBar3">|</span>
+                <a href="modernPhotos.html">Photos</a>
+            </ul>
+        </div>
+    </div>
+    
+</body>      
+        
+</html>

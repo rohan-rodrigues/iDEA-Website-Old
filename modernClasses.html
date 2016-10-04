@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <title>IDEA - Classes</title>
+    <meta charset="utf-8" />
+    <meta name="keywords" content="key, words" />
+    <meta name="description" content="description" />   
+
+    <link rel="stylesheet" href="modernClasses.css" type="text/css" />
+    <link rel="icon" href="BigIDEALogo.png">
+    
+    
+    <script type="text/javascript">
+        var documentMainPageLoadBool = false;
+        var documentFirstPageLoadBool = false;
+        var documentSecondPageLoadBool = false;
+        var documentThirdPageLoadBool = false;
+        var documentFourthPageLoadBool = false;
+        window.onload = documentLoad; /*function() {
+            var ideaName = document.getElementById("header1");
+            ideaName.innerHTML = window.innerWidth;
+        }*/
+            
+        function documentLoad() {
+            "use strict";
+            
+            var ideaName = document.getElementById("header1");
+            var headerRightHalf = document.getElementsByClassName("headerRightHalf");
+            
+            var footer = document.getElementById("footer");
+            var footerh1 = document.getElementById("footerh1");
+            var logos = document.getElementById("logos");
+            var facebookLogo = document.getElementById("facebook");
+            var gmailLogo = document.getElementById("gmail");
+            var footerBar1 = document.getElementById("footerBar1");
+            var footerBar2 = document.getElementById("footerBar2");
+            var footerBar3 = document.getElementById("footerBar3");
+            
+            var course1Div = document.getElementById("course1");
+            var course2Div = document.getElementById("course2");
+            var course1RightHalf = document.getElementById("course1right-half");
+            var course1LeftHalf = document.getElementById("course1left-half");
+            var course2RightHalf = document.getElementById("course2right-half");
+            var course2LeftHalf = document.getElementById("course2left-half");
+            var course1p = document.getElementById("course1p");
+            var course2p = document.getElementById("course2p");
+            var course1img = document.getElementById("course1img");
+            var course2img = document.getElementById("course2img");
+            var courseH1 = document.getElementsByClassName("h1");
+            
+            if (window.innerWidth >= 1000) {
+                documentFirstPageLoadBool = true;
+                documentSecondPageLoadBool = true;
+                documentThirdPageLoadBool = true;
+                documentFourthPageLoadBool = true;
+                
+                if (documentMainPageLoadBool) {
+                    documentMainPageLoadBool = false;    
+                    location.reload(true);
+                }
+            }
+            
+            else if (window.innerWidth < 1000 && window.innerWidth >= 810) {
+                documentMainPageLoadBool = true;
+                documentSecondPageLoadBool = true;
+                documentThirdPageLoadBool = true;
+                documentFourthPageLoadBool = true;
+                
+                if (documentFirstPageLoadBool) {
+                    documentFirstPageLoadBool = false;
+                    location.reload(true);
+                }
+                
+                ideaName.innerHTML = "IDEA";
+                //   gmailLogo.style.width = "40%";
+                gmailLogo.style.width = "30px";
+            //    facebookLogo.style.width = "40%";
+                facebookLogo.style.width = "30px";
+                
+            }
+            
+            else if (window.innerWidth < 810 && window.innerWidth >= 515) {
+                documentMainPageLoadBool = true;
+                documentFirstPageLoadBool = true;
+                documentThirdPageLoadBool = true;
+                documentFourthPageLoadBool = true;
+                
+                if (documentSecondPageLoadBool) {
+                    documentSecondPageLoadBool = false;
+                    location.reload(true);
+                }
+                
+                ideaName.innerHTML = "IDEA";
+                
+                footer.style.width = "100%";
+                footer.paddingTop = "0";
+                footerh1.innerHTML = "Contact Us Below";
+            /*    gmailLogo.style.width = "20%";
+                facebookLogo.style.width = "20%";  */   
+                //   gmailLogo.style.width = "40%";
+                gmailLogo.style.width = "30px";
+            //    facebookLogo.style.width = "40%";
+                facebookLogo.style.width = "30px";
+                
+                course1img.style.width = "490px";
+                course1img.style.padding = "0";
+                var tempCourseRightHalf1 = course1RightHalf;
+                course1Div.removeChild(course1RightHalf);
+                course1LeftHalf.appendChild(tempCourseRightHalf1);
+                
+                course2img.style.width = "490px";
+                var tempCourseRightHalf2 = course2RightHalf;
+                course2Div.removeChild(course2RightHalf);
+                course2LeftHalf.appendChild(tempCourseRightHalf2); 
+            }
+            
+            else if (window.innerWidth < 515 && window.innerWidth >= 480) {
+                documentMainPageLoadBool = true;
+                documentFirstPageLoadBool = true;
+                documentSecondPageLoadBool = true;
+                documentFourthPageLoadBool = true;
+                
+                if (documentThirdPageLoadBool) {
+                    documentThirdPageLoadBool = false;
+                    location.reload(true);
+                }
+                
+            //   gmailLogo.style.width = "40%";
+                gmailLogo.style.width = "30px";
+            //    facebookLogo.style.width = "40%";
+                facebookLogo.style.width = "30px";
+                
+                 ideaName.innerHTML = "IDEA";
+                while (headerRightHalf[0].firstChild) {
+                    headerRightHalf[0].removeChild(headerRightHalf[0].firstChild);
+                }
+                
+                var textTT = document.createElement("textNode");
+                textTT.id = "textNode";
+                textTT.innerHTML = " Menu &#9776;";
+                headerRightHalf[0].appendChild(textTT);
+                textTT.onclick = textClick; 
+                
+                footer.style.width = "100%";
+                footer.paddingTop = "0";
+                footerh1.innerHTML = "Contact Us";
+                  
+                if (window.innerWidth >= 490 && window.width < 515) {
+                    footerBar1.remove();
+                    footerBar2.remove();
+                    footerBar3.remove();
+                }
+                else {
+                    footerBar1.remove();
+                    footerBar3.remove();
+                }
+                
+                course1img.style.width = "450px";
+                course1img.style.padding = "0";
+                var tempCourseRightHalf1 = course1RightHalf;
+                course1Div.removeChild(course1RightHalf);
+                course1LeftHalf.appendChild(tempCourseRightHalf1);
+                
+                course2img.style.width = "450px";
+                var tempCourseRightHalf2 = course2RightHalf;
+                course2Div.removeChild(course2RightHalf);
+                course2LeftHalf.appendChild(tempCourseRightHalf2);  
+     
+            }
+
+            else {
+                documentMainPageLoadBool = true;
+                documentFirstPageLoadBool = true;
+                documentSecondPageLoadBool = true;
+                documentThirdPageLoadBool = true;
+                
+                if (documentFourthPageLoadBool) {
+                    documentFourthPageLoadBool = false;
+                    location.reload(true);
+                }
+                
+                ideaName.innerHTML = "IDEA";
+                while (headerRightHalf[0].firstChild) {
+                    headerRightHalf[0].removeChild(headerRightHalf[0].firstChild);
+                }
+                
+                var textTT = document.createElement("textNode");
+                textTT.id = "textNode";
+                textTT.innerHTML = " Menu &#9776;";
+                headerRightHalf[0].appendChild(textTT);
+                textTT.onclick = textClick; 
+                
+                footer.style.width = "100%";
+                footer.paddingTop = "0";
+                footerh1.innerHTML = "Contact Us";
+             //   gmailLogo.style.width = "40%";
+                gmailLogo.style.width = "30px";
+            //    facebookLogo.style.width = "40%";
+                facebookLogo.style.width = "30px";
+                  
+                footerBar1.remove();
+                footerBar2.remove();
+                footerBar3.remove();
+                
+                course1img.style.width = "350px";
+                course1img.style.padding = "0";
+                var tempCourseRightHalf1 = course1RightHalf;
+                course1Div.removeChild(course1RightHalf);
+                course1LeftHalf.appendChild(tempCourseRightHalf1);
+                
+                course2img.style.width = "350px";
+                var tempCourseRightHalf2 = course2RightHalf;
+                course2Div.removeChild(course2RightHalf);
+                course2LeftHalf.appendChild(tempCourseRightHalf2);  
+                
+            } 
+        }
+        
+    function textClick() {
+        var navigationDropDown = document.getElementById("navigationDropDown");
+        if (condition == false) {
+            navigationDropDown.style.display = "block";
+            condition = true;
+        }
+        else {
+            navigationDropDown.style.display = "none";
+            condition = false;
+        }
+    }
+        
+        var condition = false;
+        
+    function myFunction2() {
+        document.getElementById("myDropdown2").classList.toggle("show");
+        }
+        window.onclick = function(event) {
+        if (!event.target.matches('.dropdownButton2')) {
+            var dropdowns2 = document.getElementsByClassName("dropdown-content2");
+            for (var i = 0; i < dropdowns.length; i++) {
+                var openDropdown2= dropdowns2[i];
+                if (openDropdown2.classList.contains('show')) {
+                    openDropdown2.classList.remove('show');
+                }
+            }
+        }
+    }
+    
+    window.addEventListener('resize', documentLoad, false); 
+    </script>
+    
+</head>
+    
+<body id="body">
+    <div id="navigation">
+        <div id="left-half">
+            <h1 id="header1">Innovative Development By Entrepreneurs Association</h1>
+        </div>
+        <div id="right-half" class="headerRightHalf">
+            <span id="mainLinks">
+            <a href="jsHomeResize.html">Home</a>
+            <a href="modernClasses.html">Classes</a>
+            <a href="modernPhotos.html">Photos</a>
+            <a href="modernContactUs.html">Contact</a>
+            </span>
+            <div class="dropdown">
+                <a onclick="myFunction()" class="dropdownButton">About Us</a>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="modernWhoWeAre.html">Who We Are</a>
+                    <a href="modernTeam.html">The Team</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="navigationDropDown">
+        <div id="right-half">
+            <span id="mainLinks2">
+            <a href="jsHomeResize.html">Home</a>
+            <a href="modernClasses.html">Classes</a>
+            <a href="modernPhotos.html">Photos</a>
+            <a href="modernContactUs.html">Contact</a>
+            </span>
+            <div class="dropdown2">
+                <a onclick="myFunction2()" class="dropdownButton2">About Us</a>
+                <div id="myDropdown2" class="dropdown-content2">
+                    <a href="modernWhoWeAre.html">Who We Are</a>
+                    <a href="modernTeam.html">The Team</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+    window.onclick = function(event) {
+        if (!event.target.matches('.dropdownButton')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            for (var i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+    function myFunction2() {
+        document.getElementById("myDropdown2").classList.toggle("show");
+    }
+    window.onclick = function(event2) {
+        if (!event2.target.matches('.dropdownButton2')) {       
+            var dropdowns2 = document.getElementsByClassName("dropdown-content2");
+            for (var i = 0; i < dropdowns2.length; i++) {
+                var openDropdown2 = dropdowns2[i];
+                if (openDropdown2.classList.contains('show')) {
+                    openDropdown2.classList.remove('show');
+                }
+            }
+        }
+    }
+    </script>
+         
+   <div id="container">
+        <center><h1 class="h1">Entrepreneurship Program</h1></center>
+        <div id="course1">
+            <div id="course1left-half">
+                <img id="course1img" src="Entrepreneurship.png">
+            </div>
+            <div id="course1right-half">
+                <p id="course1p"> One of iDEA's main programs is entpreneurship. This is taught by high school students who have experience in entrepreneurship or in the business industry. This class will help students learn how to launch a business in 4-6 classes with an idea that they want to turn into a reality. They will be taught key concepts such as market research, writing a business plan, generating capital through pitches, as well as marketing/salesmanship. Students will get the chance to construct a business plan with the help of their teachers and will present it to professionals during the final class.</p>
+                <a href="">Register Now</a>
+            </div>
+        </div>
+
+        <br>
+        <br>
+        <hr>
+        <br>
+        <br>
+
+        <center><h1 class="h1">Computer Aided Design Program (CAD)</h1></center>
+        <div id="course2">
+            <div id="course2left-half">
+                <img id="course2img" src="CADPoster.jpg">
+            </div>
+            <div id="course2right-half">
+                <p align="justify" id="course2p">The CAD program is a popular class to take for children who want to be able to build, engineer, and invent. This program has been developed by high school students who have experience in product development and CAD software such as Autodesk Inventor. The CAD course helps students learn the important skills in CAD, and its application in the business world. By the end of this course, the students will have built a product or object of their choice.</p>
+                <a href="https://www.eventbrite.com/e/learning-cad-tickets-26959431385">Register Now</a>
+            </div>
+        </div>
+    </div>
+    
+    <div id="footer">
+        <div class="left-half">
+        <h10>© 2016-2017 IDEA, All Rights Reserved</h10>
+        </div>
+        <div class="center">
+            <h11 id="footerh1">Contact us through our social media below if you have any questions or concerns</h11>
+            <br>
+            <div id="logos">
+                <a id="footerA" href="https://www.facebook.com/Innovative-Development-by-Entrepreneurs-Association-130067194063527/"><img id="facebook" src="FacebookLogo.jpg" onmouseover="this.src='FacebookLogo-Hover.jpg';" onmouseout="this.src='FacebookLogo.jpg';"></a>
+                <a id="footerA" href="mailto:thinkbeyondidea@gmail.com"><img id="gmail" src="MailLogo.jpg" onmouseover="this.src='MailLogo-Hover.jpg';" onmouseout="this.src='MailLogo.jpg';">
+                </a>
+            </div>
+        </div>
+        <div class="right-half">
+            <ul id="footerUl">
+                <a href="modernContactUs.html">Feedback</a> <span id="footerBar1">|</span>
+                <a href="modernTeam.html">Team</a> <span id="footerBar2">|</span>
+                <a href="modernClasses.html">Classes</a> <span id="footerBar3">|</span>
+                <a href="modernPhotos.html">Photos</a>
+            </ul>
+        </div>
+    </div>
+    
+</body>      
+        
+</html>
